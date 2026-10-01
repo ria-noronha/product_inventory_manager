@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Product Inventory Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🌸 Beauty Product Inventory</h1>
+        <p>Manage your beauty products and stock</p>
+    </header>
+
+    <main class="container">
+
+        <section class="product-form-section">
+            <h2>Add Beauty Product</h2>
+
+            <form id="productForm">
+
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="e.g. Matte Lipstick"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <input
+                        type="text"
+                        id="brand"
+                        placeholder="e.g. Lakmé"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Makeup">Makeup</option>
+                        <option value="Skincare">Skincare</option>
+                        <option value="Haircare">Haircare</option>
+                        <option value="Fragrance">Fragrance</option>
+                        <option value="Body Care">Body Care</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price (₹)</label>
+                    <input
+                        type="number"
+                        id="price"
+                        placeholder="499"
+                        min="1"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Stock Quantity</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        placeholder="10"
+                        min="0"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="add-btn">
+                    Add Product
+                </button>
+
+            </form>
+        </section>
+
+        <section class="inventory-section">
+
+            <div class="inventory-heading">
+                <div>
+                    <h2>Beauty Inventory</h2>
+                    <p>Products currently available in your store</p>
+                </div>
+
+                <div class="product-count">
+                    Total Products:
+                    <span id="productCount">0</span>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Brand</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productTableBody">
+                        <!-- TypeScript will display products here -->
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Beauty Product Inventory Manager 🌷</p>
+    </footer>
+
+    <script src="dist/app.js"></script>
+
+</body>
+</html>
